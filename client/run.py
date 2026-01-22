@@ -6,13 +6,13 @@ import os
 from dotenv import load_dotenv
 
 # 1. Load environment variables from .env file
-load_dotenv()
+load_dotenv(override=True)
 
 # --- Configuration ---
 # We fetch variables from the environment now.
 # The second argument in getenv is a default value if the key is missing.
 INSTANCE_ID = os.getenv("EC2_INSTANCE_ID")
-REGION = os.getenv("AWS_REGION")
+REGION = os.getenv("AWS_DEFAULT_REGION")
 AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
@@ -96,7 +96,7 @@ def main():
             print("System is already up and running. Exiting.")
             return
 
-    print(f"⚠️ Service on {current_ip}:{TARGET_PORT} not reachable.")
+    print(f"⚠️  Service on {current_ip}:{TARGET_PORT} not reachable.")
 
     # 3. Check if EC2 needs starting
     if current_state in ['stopped', 'stopping']:

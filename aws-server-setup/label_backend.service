@@ -1,0 +1,13 @@
+[Unit]
+Description=Label Studio Monitor and Shutdown
+After=network.target
+
+[Service]
+# Run as root so it has permission to shutdown
+User=root
+WorkingDirectory=/opt/LabelStudio
+ExecStart=/opt/LabelStudio/.venv/bin/python3 /opt/LabelStudio/start_n_stop.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

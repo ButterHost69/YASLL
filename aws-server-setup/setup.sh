@@ -24,9 +24,6 @@ echo "Installing Label Studio"
 "$APP_DIR/.venv/bin/pip" install --upgrade pip
 "$APP_DIR/.venv/bin/pip" install label-studio
 
-echo "Setting up permision for 'autostart.sh'"
-chmod +x /opt/LabelStudio/autostart.sh
-
 echo "Installing label_backend.service"
 install -m 644 ./label_backend.service /etc/systemd/system/label_backend.service
 cp ./start_n_stop.py /opt/LabelStudio/start_n_stop.py

@@ -6,7 +6,7 @@ import sys
 
 # --- Configuration ---
 TIMEOUT_SECONDS = 1200  # 20 minutes
-COMMAND = ["label-studio", "start", "--port", "9000"]
+COMMAND = ["/opt/LabelStudio/.venv/bin/label-studio", "start", "--port", "9000"]
 # ---------------------
 
 last_activity = time.time()

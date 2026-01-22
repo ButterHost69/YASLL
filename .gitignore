@@ -1,2 +1,3 @@
 cmd
 .ourenv
+client/.env
